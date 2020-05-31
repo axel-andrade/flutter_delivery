@@ -6,8 +6,8 @@ class AccountRepository {
     await Future.delayed(new Duration(milliseconds: 1500));
     return new UserModel(
       id: "1",
-      name: "André Baltieri",
-      email: "andre@balta.io",
+      name: "Axel",
+      email: "teste@teste.com",
       picture: "https://picsum.photos/200/200",
       role: "student",
       token: "xpto",

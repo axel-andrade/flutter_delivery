@@ -1,5 +1,5 @@
 import 'package:mobx/mobx.dart';
-part 'user.store.g.dart';
+part 'user.g.dart';
 
 class UserStore = _UserStore with _$UserStore;
 

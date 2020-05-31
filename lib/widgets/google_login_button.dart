@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:masflu/views/drawer/main.dart';
-import 'package:masflu/views/home.view.dart';
+import 'package:masflu/views/drawer/home/main.dart';
 
 class GoogleButton extends StatelessWidget {
   @override
