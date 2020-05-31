@@ -27,6 +27,7 @@ dependencies:
   mobx: ^1.1.1
   flutter_mobx: ^1.1.0
   provider: ^4.0.1
+  font_awesome_flutter: '>= 4.7.0'
   
 dev_dependencies:
   flutter_test:
@@ -79,6 +80,7 @@ flutter:
   assets:
     - assets/logo.png
     - assets/logo1.png
+    - assets/logo2.png
     - assets/bone.png
     - assets/fb-icon.png
     - assets/google.png
@@ -90,9 +92,6 @@ flutter:
     - assets/app-logo.png
     - assets/post-picture-001.png
     - assets/images/
-    - assets/design_course/
-    - assets/fitness_app/
-    - assets/hotel/
     
   fonts:
     - family: WorkSans

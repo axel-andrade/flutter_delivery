@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:masflu/stores/user.store.dart';
-import 'package:masflu/views/login.view.dart';
+import 'file:///C:/Users/Axel/Documents/Flutter%20Apps/base_app/lib/views/login/main.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
