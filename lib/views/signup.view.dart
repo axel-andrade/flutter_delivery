@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:masflu/controllers/signup.dart';
 import 'package:masflu/stores/user.dart';
 import 'package:masflu/view_models/signup.dart';
-import 'package:masflu/views/drawer/main.dart';
+import 'package:masflu/views/drawer/navigation-home-view.dart';
 import 'package:masflu/widgets/form_password.dart';
 import 'package:provider/provider.dart';
 

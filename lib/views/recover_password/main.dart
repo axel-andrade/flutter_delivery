@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:masflu/stores/user.store.dart';
+import 'package:masflu/stores/user.dart';
 import 'package:provider/provider.dart';
 
 class RecoverPasswordView extends StatefulWidget {

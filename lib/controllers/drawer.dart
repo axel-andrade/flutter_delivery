@@ -153,12 +153,12 @@ class _DrawerUserControllerState extends State<DrawerUserController>
                         child: widget.screenView,
                       ),
                       //alternative touch(user Interface) for widget.screen, for example, drawer is close we need to tap on a few home screen area and close the drawer
-//                      if (scrolloffset == 1.0)
-//                        InkWell(
-//                          onTap: () {
-//                            onDrawerClick();
-//                          },
-//                        ),
+                      // if (scrolloffset == 1.0)
+                      //   InkWell(
+                      //     onTap: () {
+                      //       onDrawerClick();
+                      //     },
+                      //   ),
                       // this just menu and arrow icon animation
                       Padding(
                         padding: EdgeInsets.only(

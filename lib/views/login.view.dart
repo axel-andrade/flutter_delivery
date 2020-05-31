@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:masflu/stores/user.dart';
 import 'package:masflu/view_models/login.dart';
 import 'package:masflu/views/recover_password/main.dart';
-import 'package:masflu/views/signup/main.dart';
+import 'package:masflu/views/signup.view.dart';
 import 'package:masflu/widgets/facebook_login_button.dart';
 import 'package:masflu/widgets/google_login_button.dart';
 import 'package:masflu/widgets/form_password.dart';
 import 'package:provider/provider.dart';
 
-import '../drawer/main.dart';
+import 'drawer/navigation-home-view.dart';
 
 class LoginView extends StatefulWidget {
   @override

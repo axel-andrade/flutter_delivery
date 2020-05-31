@@ -13,75 +13,68 @@ mixin _$UserStore on _UserStore, Store {
 
   @override
   String get name {
-    _$nameAtom.context.enforceReadPolicy(_$nameAtom);
-    _$nameAtom.reportObserved();
+    _$nameAtom.reportRead();
     return super.name;
   }
 
   @override
   set name(String value) {
-    _$nameAtom.context.conditionallyRunInAction(() {
+    _$nameAtom.reportWrite(value, super.name, () {
       super.name = value;
-      _$nameAtom.reportChanged();
-    }, _$nameAtom, name: '${_$nameAtom.name}_set');
+    });
   }
 
   final _$emailAtom = Atom(name: '_UserStore.email');
 
   @override
   String get email {
-    _$emailAtom.context.enforceReadPolicy(_$emailAtom);
-    _$emailAtom.reportObserved();
+    _$emailAtom.reportRead();
     return super.email;
   }
 
   @override
   set email(String value) {
-    _$emailAtom.context.conditionallyRunInAction(() {
+    _$emailAtom.reportWrite(value, super.email, () {
       super.email = value;
-      _$emailAtom.reportChanged();
-    }, _$emailAtom, name: '${_$emailAtom.name}_set');
+    });
   }
 
   final _$pictureAtom = Atom(name: '_UserStore.picture');
 
   @override
   String get picture {
-    _$pictureAtom.context.enforceReadPolicy(_$pictureAtom);
-    _$pictureAtom.reportObserved();
+    _$pictureAtom.reportRead();
     return super.picture;
   }
 
   @override
   set picture(String value) {
-    _$pictureAtom.context.conditionallyRunInAction(() {
+    _$pictureAtom.reportWrite(value, super.picture, () {
       super.picture = value;
-      _$pictureAtom.reportChanged();
-    }, _$pictureAtom, name: '${_$pictureAtom.name}_set');
+    });
   }
 
   final _$tokenAtom = Atom(name: '_UserStore.token');
 
   @override
   String get token {
-    _$tokenAtom.context.enforceReadPolicy(_$tokenAtom);
-    _$tokenAtom.reportObserved();
+    _$tokenAtom.reportRead();
     return super.token;
   }
 
   @override
   set token(String value) {
-    _$tokenAtom.context.conditionallyRunInAction(() {
+    _$tokenAtom.reportWrite(value, super.token, () {
       super.token = value;
-      _$tokenAtom.reportChanged();
-    }, _$tokenAtom, name: '${_$tokenAtom.name}_set');
+    });
   }
 
   final _$_UserStoreActionController = ActionController(name: '_UserStore');
 
   @override
   void setUser(String pName, String pEmail, String pPicture, String pToken) {
-    final _$actionInfo = _$_UserStoreActionController.startAction();
+    final _$actionInfo =
+        _$_UserStoreActionController.startAction(name: '_UserStore.setUser');
     try {
       return super.setUser(pName, pEmail, pPicture, pToken);
     } finally {
@@ -91,7 +84,8 @@ mixin _$UserStore on _UserStore, Store {
 
   @override
   void setEmail(String pEmail) {
-    final _$actionInfo = _$_UserStoreActionController.startAction();
+    final _$actionInfo =
+        _$_UserStoreActionController.startAction(name: '_UserStore.setEmail');
     try {
       return super.setEmail(pEmail);
     } finally {
@@ -101,8 +95,11 @@ mixin _$UserStore on _UserStore, Store {
 
   @override
   String toString() {
-    final string =
-        'name: ${name.toString()},email: ${email.toString()},picture: ${picture.toString()},token: ${token.toString()}';
-    return '{$string}';
+    return '''
+name: ${name},
+email: ${email},
+picture: ${picture},
+token: ${token}
+    ''';
   }
 }
