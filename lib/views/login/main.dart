@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:masflu/stores/user.dart';
 import 'package:masflu/view_models/login.dart';
+import 'package:masflu/views/home/main.dart';
 import 'package:masflu/views/recover_password/main.dart';
 import 'package:masflu/views/signup/main.dart';
+import 'package:masflu/views/tabs/main.dart';
 import 'package:masflu/widgets/facebook_login_button.dart';
 import 'package:masflu/widgets/google_login_button.dart';
 import 'package:masflu/widgets/form_password.dart';
 import 'package:provider/provider.dart';
-
-import '../drawer/main.dart';
 
 class LoginView extends StatefulWidget {
   @override
@@ -151,68 +151,68 @@ class _LoginViewState extends State<LoginView> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => NavigationHomeScreen(),
+                        builder: (context) => TabsPage(),
                       ),
                     );
                   },
                 ),
               ),
             ),
-            Center(
-              child: Container(
-                padding: EdgeInsets.only(top: 15, bottom: 15),
-                child: Text(
-                  "- OU -",
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w300,
-                  ),
-                ),
-              ),
-            ),
-            FacebookButton(),
-            SizedBox(
-              height: 10,
-            ),
-            GoogleButton(),
-            SizedBox(
-              height: 10,
-            ),
-            Center(
-              child: Container(
-                padding: EdgeInsets.only(top: 15),
-                child: Text(
-                  "Ainda não tem uma conta?",
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w300,
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              height: 40,
-              child: FlatButton(
-                child: Text(
-                  "Cadastre-se",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 16,
-                    letterSpacing: 0.27,
-                    color: Colors.blue,
-                  ),
-                ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => SignupView(),
-                    ),
-                  );
-                },
-              ),
-            ),
+            // Center(
+            //   child: Container(
+            //     padding: EdgeInsets.only(top: 15, bottom: 15),
+            //     child: Text(
+            //       "OU",
+            //       style: TextStyle(
+            //         fontSize: 14,
+            //         fontWeight: FontWeight.w300,
+            //       ),
+            //     ),
+            //   ),
+            // ),
+            // FacebookButton(),
+            // SizedBox(
+            //   height: 10,
+            // ),
+            // GoogleButton(),
+            // SizedBox(
+            //   height: 10,
+            // ),
+            // Center(
+            //   child: Container(
+            //     padding: EdgeInsets.only(top: 15),
+            //     child: Text(
+            //       "Ainda não tem uma conta?",
+            //       style: TextStyle(
+            //         fontSize: 14,
+            //         fontWeight: FontWeight.w300,
+            //       ),
+            //     ),
+            //   ),
+            // ),
+            // Container(
+            //   height: 40,
+            //   child: FlatButton(
+            //     child: Text(
+            //       "Cadastre-se",
+            //       textAlign: TextAlign.center,
+            //       style: TextStyle(
+            //         fontWeight: FontWeight.w600,
+            //         fontSize: 16,
+            //         letterSpacing: 0.27,
+            //         color: Colors.blue,
+            //       ),
+            //     ),
+            //     onPressed: () {
+            //       Navigator.push(
+            //         context,
+            //         MaterialPageRoute(
+            //           builder: (context) => SignupView(),
+            //         ),
+            //       );
+            //     },
+            //   ),
+            // ),
           ],
         ),
       ),

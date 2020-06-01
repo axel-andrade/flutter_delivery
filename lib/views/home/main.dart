@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:masflu/stores/user.dart';
 import 'package:provider/provider.dart';
 
-class HomeDrawerView extends StatefulWidget {
+class HomeView extends StatefulWidget {
   @override
-  _HomeDrawerViewState createState() => _HomeDrawerViewState();
+  _HomeViewState createState() => _HomeViewState();
 }
 
-class _HomeDrawerViewState extends State<HomeDrawerView> {
+class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     var store = Provider.of<UserStore>(context);

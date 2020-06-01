@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:masflu/views/drawer/main.dart';
-import 'package:masflu/views/drawer/home/main.dart';
+import 'package:masflu/views/home/main.dart';
 
 class FacebookButton extends StatelessWidget {
   @override
@@ -41,7 +40,7 @@ class FacebookButton extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => NavigationHomeScreen(),
+              builder: (context) => HomeView(),
             ),
           );
         },

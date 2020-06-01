@@ -1,6 +1,4 @@
-import 'package:masflu/models/user.dart';
 import 'package:masflu/repositories/account.dart';
-import 'package:masflu/view_models/login.dart';
 
 class LoginController {
   AccountRepository repository;

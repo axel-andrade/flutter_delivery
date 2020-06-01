@@ -2,8 +2,9 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:masflu/stores/user.dart';
-import 'file:///C:/Users/Axel/Documents/Flutter%20Apps/base_app/lib/views/login/main.dart';
+import 'package:masflu/views/tabs/main.dart';
 import 'package:provider/provider.dart';
+import 'views/splash/main.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -37,20 +38,8 @@ class App extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: LoginView(),
+        home: Splash()
       ),
     );
-  }
-}
-
-class HexColor extends Color {
-  HexColor(final String hexColor) : super(_getColorFromHex(hexColor));
-
-  static int _getColorFromHex(String hexColor) {
-    hexColor = hexColor.toUpperCase().replaceAll('#', '');
-    if (hexColor.length == 6) {
-      hexColor = 'FF' + hexColor;
-    }
-    return int.parse(hexColor, radix: 16);
   }
 }
