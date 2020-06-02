@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:masflu/app_theme.dart';
 import 'package:masflu/models/profileListItem.dart';
 import 'package:masflu/widgets/profileItem.dart';
 
@@ -13,7 +14,7 @@ class _ProfileListItemState extends State<ProfileListItem> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.withOpacity(0.2),
+      backgroundColor: AppTheme.secondColor,
       body: ListView.separated(
         padding: const EdgeInsets.only(top: 8, left: 8, right: 8, bottom: 8),
         itemCount: items.length,

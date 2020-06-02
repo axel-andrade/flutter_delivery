@@ -1,24 +1,25 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:masflu/app_theme.dart';
 import 'package:masflu/widgets/profileListItem.dart';
 
 class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.withOpacity(0.2),
+      backgroundColor: AppTheme.secondColor,
       body: Column(
         children: <Widget>[
           SizedBox(
             height: 30,
           ),
           Container(
-            color: Colors.grey.withOpacity(0.2),
+            color: AppTheme.secondColor,
             child: ListTile(
               leading: GestureDetector(
                 onTap: () {},
                 child: Container(
-                  color: Colors.blue,
+                  color: Colors.white,
                   width: 48,
                   height: 48,
                   padding: EdgeInsets.symmetric(vertical: 4.0),
