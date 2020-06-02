@@ -1,3 +1,4 @@
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:masflu/stores/user.dart';
 import 'package:masflu/view_models/login.dart';
@@ -5,6 +6,7 @@ import 'package:masflu/views/home/main.dart';
 import 'package:masflu/views/recover_password/main.dart';
 import 'package:masflu/views/signup/main.dart';
 import 'package:masflu/views/tabs/main.dart';
+import 'package:masflu/widgets/customButton.dart';
 import 'package:masflu/widgets/facebook_login_button.dart';
 import 'package:masflu/widgets/google_login_button.dart';
 import 'package:masflu/widgets/form_password.dart';
@@ -171,10 +173,21 @@ class _LoginViewState extends State<LoginView> {
             //   ),
             // ),
             // FacebookButton(),
-            // SizedBox(
-            //   height: 10,
-            // ),
-            // GoogleButton(),
+            SizedBox(
+              height: 10,
+            ),
+            CustomButton(
+              text: 'Entrar',
+              callback: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => TabsPage(),
+                  ),
+                );
+              },
+              icon: EvaIcons.logIn,
+            ) // GoogleButton(),
             // SizedBox(
             //   height: 10,
             // ),

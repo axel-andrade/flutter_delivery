@@ -1,6 +1,7 @@
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:masflu/views/home/main.dart';
+import 'package:masflu/views/profile/main.dart';
 
 class TabsPage extends StatelessWidget {
   @override
@@ -13,34 +14,39 @@ class TabsPage extends StatelessWidget {
             HomeView(),
             HomeView(),
             HomeView(),
-            HomeView(),
+            ProfilePage(),
           ],
         ),
         bottomNavigationBar: new TabBar(
           tabs: <Widget>[
             Tab(
-              icon: FaIcon(FontAwesomeIcons.home),
+              icon: Icon(Icons.home),
               text: 'Início',
             ),
             Tab(
-              icon: FaIcon(FontAwesomeIcons.search),
+              icon: Icon(EvaIcons.search),
               text: 'Busca',
             ),
             Tab(
-              icon: FaIcon(FontAwesomeIcons.chartPie),
+              icon: Icon(EvaIcons.pieChart),
               text: 'Estatística',
             ),
             Tab(
-              icon: FaIcon(FontAwesomeIcons.user),
+              icon: Icon(EvaIcons.person),
               text: 'Perfil',
             ),
           ],
           labelColor: Theme.of(context).primaryColor,
+          labelStyle: TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.bold,
+          ),
           unselectedLabelColor: Colors.black38,
           indicatorSize: TabBarIndicatorSize.tab,
-          indicatorPadding: EdgeInsets.all(5.0),
+          indicatorPadding: EdgeInsets.all(4.0),
           indicatorColor: Theme.of(context).primaryColor,
         ),
+        backgroundColor: Colors.grey.withOpacity(0.2),
       ),
     );
   }

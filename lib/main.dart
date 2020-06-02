@@ -2,9 +2,12 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:masflu/stores/user.dart';
+import 'package:masflu/views/login/main.dart';
+import 'package:masflu/views/profile/main.dart';
+import 'package:masflu/views/recover_password/main.dart';
+import 'package:masflu/views/splash/main.dart';
 import 'package:masflu/views/tabs/main.dart';
 import 'package:provider/provider.dart';
-import 'views/splash/main.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,13 +36,14 @@ class App extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-        title: 'Base app',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: Splash()
-      ),
+          title: 'Base app',
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+            backgroundColor: Colors.grey.withOpacity(0.2),
+            fontFamily: 'Raleway',
+          ),
+          home: LoginView(),),
     );
   }
 }

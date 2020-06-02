@@ -1,95 +1,55 @@
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:masflu/views/home/main.dart';
+import 'package:masflu/widgets/profileListItem.dart';
 
-class ListTileWidget extends StatefulWidget {
-  @override
-  _ListTileWidgetState createState() => _ListTileWidgetState();
-}
-
-class _ListTileWidgetState extends State<ListTileWidget> {
-  final List<String> entries = <String>[
-    'Item 1',
-    'Item 2',
-    'Item 3',
-    'Item 4',
-    'Item 5',
-    'Item 6',
-    'Item 7',
-    'Item 8',
-    'Item 9',
-    'Item 10',
-    'Item 11',
-    'Item 12',
-    'Item 13',
-    'Item 14',
-    'Item 15'
-  ];
-
+class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          'ListTile Widget',
-          style: TextStyle(
-            fontSize: 20.0,
-            fontWeight: FontWeight.bold,
-            // fontFamily: Utils.ubuntuRegularFont,
+      backgroundColor: Colors.grey.withOpacity(0.2),
+      body: Column(
+        children: <Widget>[
+          SizedBox(
+            height: 30,
           ),
-        ),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.code),
-            onPressed: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => HomeView(),
-              ),
-            ),
-          )
-        ],
-      ),
-      body: ListView.separated(
-        padding: const EdgeInsets.only(top: 8, left: 8, right: 8, bottom: 8),
-        itemCount: entries.length,
-        reverse: false,
-        itemBuilder: (BuildContext context, int index) {
-          return Container(
-            color: Colors.blue[500],
+          Container(
+            color: Colors.grey.withOpacity(0.2),
             child: ListTile(
               leading: GestureDetector(
                 onTap: () {},
                 child: Container(
+                  color: Colors.blue,
                   width: 48,
                   height: 48,
                   padding: EdgeInsets.symmetric(vertical: 4.0),
                   alignment: Alignment.center,
-                  child: CircleAvatar(
-                    child: Icon(Icons.person),
-                    backgroundColor: Colors.white,
+                  child: SizedBox(
+                    width: 80,
+                    height: 80,
+                    child: Image.asset("assets/logo2.png"),
                   ),
                 ),
               ),
               trailing: Icon(
-                Icons.more_vert,
-                color: Colors.white,
+                EvaIcons.edit,
+                color: Theme.of(context).primaryColor,
               ),
               title: Text(
-                "Person index + 1",
+                'Axel Andrade',
                 style: TextStyle(color: Colors.white),
               ),
               subtitle: Text(
-                "entries[index]",
+                'ajaxeljunio@gmail.com',
                 style: TextStyle(color: Colors.white),
               ),
-              onTap: () => null,
+              onTap: () => {},
             ),
-          );
-        },
-        separatorBuilder: (BuildContext context, int index) => Divider(
-          thickness: 2,
-        ),
+          ),
+          SizedBox(),
+          Expanded(
+            child: ProfileListItem(),
+          ),
+        ],
       ),
     );
   }
