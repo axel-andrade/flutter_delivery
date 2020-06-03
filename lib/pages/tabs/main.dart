@@ -2,9 +2,9 @@ import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:masflu/app_theme.dart';
-import 'package:masflu/utils/hexColor.dart';
-import 'package:masflu/views/home/main.dart';
-import 'package:masflu/views/profile/main.dart';
+import 'package:masflu/utils.dart';
+import 'package:masflu/pages/home/main.dart';
+import 'package:masflu/pages/profile/main.dart';
 
 class TabsPage extends StatefulWidget {
   TabsPage({Key key}) : super(key: key);
@@ -39,9 +39,9 @@ class _TabsPageState extends State<TabsPage> {
             setState(() => currentIndex = index);
           },
           children: <Widget>[
-            HomeView(),
-            HomeView(),
-            HomeView(),
+            HomePage(),
+            HomePage(),
+            HomePage(),
             ProfilePage(),
           ],
         ),
@@ -100,9 +100,9 @@ class _TabsPageState extends State<TabsPage> {
 //       child: Scaffold(
 //         body: TabBarView(
 //           children: <Widget>[
-//             HomeView(),
-//             HomeView(),
-//             HomeView(),
+//             HomePage(),
+//             HomePage(),
+//             HomePage(),
 //             ProfilePage(),
 //           ],
 //         ),

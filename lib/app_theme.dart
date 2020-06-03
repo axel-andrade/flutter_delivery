@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:masflu/utils/hexColor.dart';
+import 'package:masflu/utils.dart';
 
 class AppTheme {
   AppTheme._();

@@ -23,11 +23,11 @@ class CustomButton extends StatelessWidget {
             icon != null ? SizedBox(width: 10) : SizedBox(),
             Text(
               text,
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
             )
           ],
         ),
-        onPressed: () {},
+        onPressed: () => callback(),
       ),
     );
   }

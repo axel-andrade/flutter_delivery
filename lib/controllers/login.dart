@@ -1,16 +1,14 @@
-import 'package:masflu/repositories/account.dart';
+import 'package:masflu/models/user.dart';
+import 'package:masflu/repositories/user.dart';
 
 class LoginController {
-  AccountRepository repository;
+  UserRepository repository;
 
   LoginController() {
-    repository = new AccountRepository();
+    repository = new UserRepository();
   }
 
-  // Future<UserModel> create(LoginViewModel model) async {
-  //   model.busy = true;
-  //   var user = await repository.createAccount(model);
-  //   model.busy = false;
-  //   return user;
-  // }
+  Future<UserModel> logIn(String email, String password) async {
+    return repository.logIn(email, password);
+  }
 }

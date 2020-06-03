@@ -1,17 +1,16 @@
 import 'package:masflu/models/user.dart';
-import 'package:masflu/repositories/account.dart';
-import 'package:masflu/view_models/signup.dart';
+import 'package:masflu/repositories/user.dart';
 
 class SignupController {
-  AccountRepository repository;
+  UserRepository repository;
 
   SignupController() {
-    repository = new AccountRepository();
+    repository = new UserRepository();
   }
 
-  Future<UserModel> create(SignupViewModel model) async {
+  Future<UserModel> createUser(model) async {
     model.busy = true;
-    var user = await repository.createAccount(model);
+    var user = await repository.createUser();
     model.busy = false;
     return user;
   }

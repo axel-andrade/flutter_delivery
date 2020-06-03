@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:masflu/widgets/customButton.dart';
 
 class CustomAvatar extends StatelessWidget {
   final String path;

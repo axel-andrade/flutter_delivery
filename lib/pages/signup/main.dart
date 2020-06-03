@@ -1,24 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:masflu/controllers/signup.dart';
 import 'package:masflu/stores/user.dart';
-import 'package:masflu/view_models/signup.dart';
-import 'package:masflu/views/home/main.dart';
+import 'package:masflu/pages/home/main.dart';
 import 'package:masflu/widgets/form_password.dart';
 import 'package:provider/provider.dart';
 
-class SignupView extends StatefulWidget {
+class SignupPage extends StatefulWidget {
   @override
-  _SignupViewState createState() => _SignupViewState();
+  _SignupPageState createState() => _SignupPageState();
 }
 
-class _SignupViewState extends State<SignupView> {
+class _SignupPageState extends State<SignupPage> {
   final _formKey = GlobalKey<FormState>();
   final _controller = new SignupController();
-  var model = new SignupViewModel();
 
   @override
   Widget build(BuildContext context) {
-    var store = Provider.of<UserStore>(context);
+    var userStore = Provider.of<UserStore>(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -83,7 +81,7 @@ class _SignupViewState extends State<SignupView> {
             ),
             TextFormField(
               //autofocus: true,
-              initialValue: store.email,
+              initialValue: userStore.email,
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
                 labelText: "Nome",
@@ -104,7 +102,7 @@ class _SignupViewState extends State<SignupView> {
                 return null;
               },
               onSaved: (val) {
-                model.name = val;
+                userStore.setEmail(val);
               },
             ),
             SizedBox(
@@ -112,7 +110,7 @@ class _SignupViewState extends State<SignupView> {
             ),
             TextFormField(
               //autofocus: true,
-              initialValue: store.email,
+              initialValue: userStore.email,
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
                 labelText: "E-mail",
@@ -133,7 +131,7 @@ class _SignupViewState extends State<SignupView> {
                 return null;
               },
               onSaved: (val) {
-                model.email = val;
+                userStore.setEmail(val);
               },
             ),
             SizedBox(
@@ -141,7 +139,7 @@ class _SignupViewState extends State<SignupView> {
             ),
             TextFormField(
               //autofocus: true,
-              initialValue: store.email,
+              initialValue: userStore.email,
               keyboardType: TextInputType.phone,
               decoration: InputDecoration(
                 labelText: "Telefone",
@@ -162,7 +160,7 @@ class _SignupViewState extends State<SignupView> {
                 return null;
               },
               onSaved: (val) {
-                model.email = val;
+                userStore.setEmail(val);
               },
             ),
             SizedBox(
@@ -183,7 +181,7 @@ class _SignupViewState extends State<SignupView> {
                 return null;
               },
               onSaved: (val) {
-                model.email = val;
+                userStore.setEmail(val);
               },
             ),
             SizedBox(
@@ -204,7 +202,7 @@ class _SignupViewState extends State<SignupView> {
                 return null;
               },
               onSaved: (val) {
-                model.email = val;
+                userStore.setEmail(val);
               },
             ),
             SizedBox(
@@ -248,7 +246,7 @@ class _SignupViewState extends State<SignupView> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => HomeView(),
+                        builder: (context) => HomePage(),
                       ),
                     );
                   },

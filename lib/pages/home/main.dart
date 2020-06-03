@@ -5,12 +5,12 @@ import 'package:masflu/widgets/avatar.dart';
 import 'package:masflu/widgets/customButton.dart';
 import 'package:provider/provider.dart';
 
-class HomeView extends StatefulWidget {
+class HomePage extends StatefulWidget {
   @override
-  _HomeViewState createState() => _HomeViewState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _HomeViewState extends State<HomeView> {
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     var store = Provider.of<UserStore>(context);

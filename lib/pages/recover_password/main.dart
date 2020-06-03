@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:masflu/stores/user.dart';
 import 'package:provider/provider.dart';
 
-class RecoverPasswordView extends StatefulWidget {
+class RecoverPasswordPage extends StatefulWidget {
   @override
-  _RecoverPasswordViewState createState() => _RecoverPasswordViewState();
+  _RecoverPasswordPageState createState() => _RecoverPasswordPageState();
 }
 
-class _RecoverPasswordViewState extends State<RecoverPasswordView> {
+class _RecoverPasswordPageState extends State<RecoverPasswordPage> {
   @override
   Widget build(BuildContext context) {
     var store = Provider.of<UserStore>(context);

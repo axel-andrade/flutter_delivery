@@ -8,7 +8,7 @@ abstract class _UserStore with Store {
   String name = "Axel";
 
   @observable
-  String email = "";
+  String email = "ajaxeljunio@gmail.com";
 
   @observable
   String picture = "https://placehold.it/200";

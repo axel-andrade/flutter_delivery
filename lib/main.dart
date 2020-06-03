@@ -2,7 +2,9 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:masflu/stores/user.dart';
-import 'package:masflu/views/tabs/main.dart';
+import 'package:masflu/pages/login/main.dart';
+import 'package:masflu/pages/splash/main.dart';
+import 'package:masflu/pages/tabs/main.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
@@ -39,7 +41,7 @@ class App extends StatelessWidget {
           backgroundColor: Colors.grey.withOpacity(0.2),
           fontFamily: 'Raleway',
         ),
-        home: TabsPage(),
+        home: SplashPage(),
       ),
     );
   }
