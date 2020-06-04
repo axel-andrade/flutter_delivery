@@ -1,5 +1,9 @@
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:masflu/app_theme.dart';
+import 'package:masflu/main.dart';
 import 'package:masflu/stores/user.dart';
+import 'package:masflu/widgets/customButton.dart';
 import 'package:provider/provider.dart';
 
 class RecoverPasswordPage extends StatefulWidget {
@@ -8,22 +12,22 @@ class RecoverPasswordPage extends StatefulWidget {
 }
 
 class _RecoverPasswordPageState extends State<RecoverPasswordPage> {
+  var email = '';
   @override
   Widget build(BuildContext context) {
     var store = Provider.of<UserStore>(context);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
         automaticallyImplyLeading: true,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios),
-          color: Color.fromRGBO(227, 29, 26, 0.4),
+          icon: Icon(Icons.arrow_back_ios, size: 30,),
+          color: Colors.blue,
           onPressed: () => Navigator.pop(context, false),
         ),
       ),
       body: Container(
         padding: EdgeInsets.only(top: 60, left: 40, right: 40),
-        color: Colors.white,
+        color: AppTheme.secondColor,
         child: ListView(
           children: <Widget>[
             Column(
@@ -33,19 +37,19 @@ class _RecoverPasswordPageState extends State<RecoverPasswordPage> {
                   child: Column(
                     children: <Widget>[
                       SizedBox(
-                        width: 200,
-                        height: 200,
-                        child: Image.asset("assets/reset-password-icon.png"),
+                        width: 150,
+                        height: 150,
+                        child: Image.asset("assets/logo2.png"),
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 60,
                       ),
                       Text(
                         "Esqueceu sua senha?",
                         style: TextStyle(
-                          fontSize: 32,
-                          fontWeight: FontWeight.w500,
-                          color: Color.fromRGBO(227, 29, 26, 0.4),
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue,
                         ),
                       ),
                       SizedBox(
@@ -56,12 +60,14 @@ class _RecoverPasswordPageState extends State<RecoverPasswordPage> {
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w400,
+                          color: Colors.white
                         ),
                         textAlign: TextAlign.center,
                       )
                     ],
                   ),
                 ),
+                SizedBox(height: 40,),
                 Container(
                   width: double.infinity,
                   child: Column(
@@ -70,21 +76,28 @@ class _RecoverPasswordPageState extends State<RecoverPasswordPage> {
                         height: 10,
                       ),
                       TextFormField(
-                        //autofocus: true,
+                        autofocus: false,
                         initialValue: store.email,
                         keyboardType: TextInputType.emailAddress,
+                        obscureText: false,
                         decoration: InputDecoration(
+                          filled: true,
+                          fillColor: AppTheme.primaryColor,
                           labelText: "E-mail",
                           labelStyle: TextStyle(
-                            fontWeight: FontWeight.normal,
-                            fontSize: 20,
-                            letterSpacing: 0.27,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 20,
+                              letterSpacing: 0.27,
+                              color: Colors.white),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            borderSide: BorderSide(color: Colors.white),
                           ),
                           border: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(10)),
-                          ),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10))),
                         ),
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: 20, color: Colors.white),
                         validator: (value) {
                           if (value.isEmpty) {
                             return 'Email Inválido';
@@ -92,56 +105,19 @@ class _RecoverPasswordPageState extends State<RecoverPasswordPage> {
                           return null;
                         },
                         onSaved: (val) {
-                          // model.email = val;
+                          store.setEmail(val);
+                        },
+                        onChanged: (val) {
+                          store.setEmail(val);
                         },
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 40,
                       ),
-                      Container(
-                        height: 60,
-                        alignment: Alignment.centerLeft,
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                            stops: [0.3, 1],
-                            colors: [
-                              Color.fromRGBO(227, 29, 26, 0.4),
-                              Color(0XFFF92B7F),
-                            ],
-                          ),
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(5),
-                          ),
-                        ),
-                        child: SizedBox.expand(
-                          child: FlatButton(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Text(
-                                  "Enviar",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 20,
-                                    letterSpacing: 0.27,
-                                    color: Colors.white,
-                                  ),
-                                  textAlign: TextAlign.left,
-                                ),
-                              ],
-                            ),
-                            onPressed: () {
-                              // Navigator.push(
-                              //   context,
-                              //   MaterialPageRoute(
-                              //     builder: (context) => NavigationHomeScreen(),
-                              //   ),
-                              // );
-                            },
-                          ),
-                        ),
+                      CustomButton(
+                        text: 'Enviar',
+                        callback: () {},
+                        icon: EvaIcons.paperPlane,
                       ),
                       SizedBox(
                         height: 20,

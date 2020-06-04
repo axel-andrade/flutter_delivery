@@ -1,8 +1,8 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:masflu/app_theme.dart';
-import 'package:masflu/utils.dart';
 import 'package:masflu/pages/home/main.dart';
 import 'package:masflu/pages/profile/main.dart';
 
@@ -31,6 +31,8 @@ class _TabsPageState extends State<TabsPage> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
+
     return Scaffold(
       body: SizedBox.expand(
         child: PageView(
@@ -46,7 +48,7 @@ class _TabsPageState extends State<TabsPage> {
           ],
         ),
       ),
-      backgroundColor: AppTheme.primaryColor,
+      backgroundColor: AppTheme.secondColor,
       bottomNavigationBar: BottomNavyBar(
         backgroundColor: AppTheme.secondColor,
         selectedIndex: currentIndex,
@@ -59,29 +61,50 @@ class _TabsPageState extends State<TabsPage> {
         },
         items: [
           BottomNavyBarItem(
-            icon: Icon(Icons.home),
-            title: Text('Inicio'),
+            icon: Icon(
+              Icons.home,
+              size: 25,
+            ),
+            title: Text(
+              'Inicio',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
             activeColor: Colors.blue,
             inactiveColor: Colors.grey,
             textAlign: TextAlign.center,
           ),
           BottomNavyBarItem(
-            icon: Icon(EvaIcons.search),
-            title: Text('Busca'),
+            icon: Icon(
+              Icons.search,
+              size: 28,
+            ),
+            title: Text(
+              'Busca',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
             activeColor: Colors.blue,
             inactiveColor: Colors.grey,
             textAlign: TextAlign.center,
           ),
           BottomNavyBarItem(
-            icon: Icon(EvaIcons.pieChart),
-            title: Text('Estatísticas'),
+            icon: Icon(
+              EvaIcons.pieChart,
+              size: 25,
+            ),
+            title: Text(
+              'Gráficos',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
             activeColor: Colors.blue,
             inactiveColor: Colors.grey,
             textAlign: TextAlign.center,
           ),
           BottomNavyBarItem(
-            icon: Icon(EvaIcons.person),
-            title: Text('Perfil'),
+            icon: Icon(EvaIcons.person, size: 25,),
+            title: Text(
+              'Perfil',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
             activeColor: Colors.blue,
             inactiveColor: Colors.grey,
             textAlign: TextAlign.center,
@@ -140,4 +163,3 @@ class _TabsPageState extends State<TabsPage> {
 //     );
 //   }
 // }
-

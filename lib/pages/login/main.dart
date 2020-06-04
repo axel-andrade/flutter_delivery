@@ -46,10 +46,11 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    var userStore = Provider.of<UserStore>(context);
-    print(userStore);
+    var store = Provider.of<UserStore>(context);
+    print(store);
     return Scaffold(
       key: scaffoldKey,
+      resizeToAvoidBottomInset: false,
       body: Container(
         padding: EdgeInsets.only(top: 60, left: 40, right: 40),
         color: AppTheme.secondColor,
@@ -67,8 +68,8 @@ class _LoginPageState extends State<LoginPage> {
                 height: 40,
               ),
               TextFormField(
-                autofocus: true,
-                initialValue: userStore.email,
+                autofocus: false,
+                initialValue: store.email,
                 keyboardType: TextInputType.emailAddress,
                 obscureText: false,
                 decoration: InputDecoration(
@@ -95,17 +96,17 @@ class _LoginPageState extends State<LoginPage> {
                   return null;
                 },
                 onSaved: (val) {
-                  userStore.setEmail(val);
+                  store.setEmail(val);
                 },
                 onChanged: (val) {
-                  userStore.setEmail(val);
+                  store.setEmail(val);
                 },
               ),
               SizedBox(
-                height: 10,
+                height: 20,
               ),
               TextFormField(
-                autofocus: true,
+                autofocus: false,
                 maxLength: 8,
                 initialValue: password,
                 keyboardType: TextInputType.text,
@@ -195,7 +196,7 @@ class _LoginPageState extends State<LoginPage> {
               CustomButton(
                 text: 'Entrar',
                 callback: () {
-                  handleLogIn(userStore.email, password);
+                  handleLogIn(store.email, password);
                 },
                 icon: EvaIcons.logIn,
               )
