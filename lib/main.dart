@@ -50,7 +50,7 @@ class App extends StatelessWidget {
             appBarTheme: AppBarTheme(
               color: AppTheme.secondColor,
             )),
-        home: TabsPage(),
+        home: SplashPage(),
       ),
     );
   }

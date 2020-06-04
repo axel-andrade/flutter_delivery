@@ -15,33 +15,22 @@ class CustomButton extends StatelessWidget {
       height: 60,
       alignment: Alignment.centerLeft,
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          stops: [0.3, 1],
-          colors: [Colors.blue[300], Colors.blue],
-        ),
+        color: Colors.blue,
         borderRadius: BorderRadius.all(
           Radius.circular(5),
         ),
       ),
       child: SizedBox.expand(
         child: FlatButton(
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                icon != null ? Icon(icon, color: Colors.white, size: 30,) : SizedBox(),
-                icon != null ? SizedBox(width: 10) : SizedBox(),
-                Text(
-                  text,
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,),
-                )
-              ],
-            ),
+            child: Center(
+                child: Text(
+              text,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            )),
             onPressed: () => callback()),
       ),
     );

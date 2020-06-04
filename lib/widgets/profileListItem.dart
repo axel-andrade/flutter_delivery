@@ -16,7 +16,7 @@ class _ProfileListItemState extends State<ProfileListItem> {
     return Scaffold(
       backgroundColor: AppTheme.secondColor,
       body: ListView.separated(
-        padding: const EdgeInsets.only(top: 8, left: 8, right: 8, bottom: 8),
+        padding: const EdgeInsets.only(top: 4, left: 15, right: 15, bottom: 4),
         itemCount: items.length,
         reverse: false,
         itemBuilder: (BuildContext context, int index) {

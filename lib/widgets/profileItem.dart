@@ -1,5 +1,6 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:masflu/app_theme.dart';
 
 class ProfileItem extends StatelessWidget {
   final IconData icon;
@@ -18,13 +19,13 @@ class ProfileItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.grey.withOpacity(0.2),
+      color: AppTheme.primaryColor,
       child: ListTile(
         leading: GestureDetector(
-          onTap: () {},
+          onTap: () => callback(),
           child: Container(
-            width: 48,
-            height: 48,
+            width: 30,
+            height: 30,
             padding: EdgeInsets.symmetric(vertical: 4.0),
             alignment: Alignment.center,
             child: Icon(icon, color: Theme.of(context).primaryColor),
@@ -35,6 +36,7 @@ class ProfileItem extends StatelessWidget {
             : Icon(
                 EvaIcons.arrowIosForward,
                 color: Theme.of(context).primaryColor,
+                size: 30
               ),
         title: Text(
           title,
@@ -44,7 +46,7 @@ class ProfileItem extends StatelessWidget {
           subtitle,
           style: TextStyle(color: Colors.white),
         ),
-        onTap: () => callback,
+        onTap: () => callback(),
       ),
     );
   }

@@ -20,7 +20,7 @@ class _RecoverPasswordPageState extends State<RecoverPasswordPage> {
       appBar: AppBar(
         automaticallyImplyLeading: true,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios, size: 30,),
+          icon: Icon(Icons.arrow_back_ios),
           color: Colors.blue,
           onPressed: () => Navigator.pop(context, false),
         ),
@@ -48,7 +48,7 @@ class _RecoverPasswordPageState extends State<RecoverPasswordPage> {
                         "Esqueceu sua senha?",
                         style: TextStyle(
                           fontSize: 24,
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.normal,
                           color: Colors.blue,
                         ),
                       ),
