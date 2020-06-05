@@ -1,57 +1,57 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
-import 'package:masflu/widgets/profileItem.dart';
+import 'package:masflu/widgets/drawerItem.dart';
 
-class ProfileListItemModel {
-  final List<ProfileItem> items = <ProfileItem>[
-    // ProfileItem(
+class DrawerItemListModel {
+  final List<DrawerItem> items = <DrawerItem>[
+    // DrawerItem(
     //   title: 'Clientes',
     //   subtitle: 'Meus clientes',
     //   icon: EvaIcons.peopleOutline,
     //   callback: () {},
     // ),
-    // ProfileItem(
+    // DrawerItem(
     //   title: 'Produtos',
     //   subtitle: 'Meus produtos',
     //   icon: Icons.store,
     //   callback: () {},
     // ),
-    // ProfileItem(
+    // DrawerItem(
     //   title: 'Serviços',
     //   subtitle: 'Meus serviços',
     //   icon: Icons.list,
     //   callback: () {},
     // ),
-    // ProfileItem(
+    // DrawerItem(
     //   title: 'Vendas',
     //   subtitle: 'Minhas vendas',
     //   icon: EvaIcons.shoppingBagOutline,
     //   callback: () {},
     // ),
-    // ProfileItem(
+    // DrawerItem(
     //   title: 'Ordens de Serviço',
     //   subtitle: 'Minhas ordens de serviço',
     //   icon: EvaIcons.clipboardOutline,
     //   callback: () {},
     // ),
-    ProfileItem(
+    DrawerItem(
       title: 'Configurações',
       subtitle: 'Minhas configurações',
       icon: EvaIcons.settings2Outline,
       callback: () {},
     ),
-    ProfileItem(
+    DrawerItem(
       title: 'Temas',
       subtitle: 'Meus temas',
       icon: EvaIcons.colorPalette,
       callback: () {},
     ),
-    ProfileItem(
+    DrawerItem(
       title: 'Ajuda',
       subtitle: 'Minhas opções de ajuda',
       icon: EvaIcons.questionMarkCircleOutline,
       callback: () {},
     ),
-    ProfileItem(
+    DrawerItem(
       title: 'Sair',
       subtitle: 'Sair do aplicativo',
       icon: EvaIcons.logOutOutline,
@@ -60,7 +60,7 @@ class ProfileListItemModel {
     ),
   ];
 
-  List<ProfileItem> getItems() {
+  List<DrawerItem> getItems() {
     return this.items;
   }
 }

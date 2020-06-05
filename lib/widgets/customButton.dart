@@ -15,7 +15,7 @@ class CustomButton extends StatelessWidget {
       height: 60,
       alignment: Alignment.centerLeft,
       decoration: BoxDecoration(
-        color: Colors.blue,
+        color: Theme.of(context).primaryColor,
         borderRadius: BorderRadius.all(
           Radius.circular(5),
         ),

@@ -1,15 +1,14 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:masflu/app_theme.dart';
 
-class ProfileItem extends StatelessWidget {
+class DrawerItem extends StatelessWidget {
   final IconData icon;
   final String title;
   final String subtitle;
   final Function callback;
   final bool withTrailing;
 
-  ProfileItem(
+  DrawerItem(
       {@required this.icon,
       @required this.title,
       @required this.subtitle,
@@ -19,7 +18,7 @@ class ProfileItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppTheme.primaryColor,
+      color: Theme.of(context).backgroundColor,
       child: ListTile(
         leading: GestureDetector(
           onTap: () => callback(),
@@ -40,12 +39,12 @@ class ProfileItem extends StatelessWidget {
               ),
         title: Text(
           title,
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          style: TextStyle(color: Theme.of(context).accentColor, fontWeight: FontWeight.bold),
         ),
-        subtitle: Text(
-          subtitle,
-          style: TextStyle(color: Colors.white),
-        ),
+        // subtitle: Text(
+        //   subtitle,
+        //   style: TextStyle(color: Theme.of(context).accentColor),
+        // ),
         onTap: () => callback(),
       ),
     );

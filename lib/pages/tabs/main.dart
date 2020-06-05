@@ -2,9 +2,11 @@ import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:masflu/app_theme.dart';
+import 'package:masflu/pages/drawer/main.dart';
 import 'package:masflu/pages/home/main.dart';
-import 'package:masflu/pages/profile/main.dart';
+import 'package:masflu/pages/notification/main.dart';
+import 'package:masflu/pages/statistic/main.dart';
+import 'package:masflu/pages/search/main.dart';
 
 class TabsPage extends StatefulWidget {
   TabsPage({Key key}) : super(key: key);
@@ -32,8 +34,12 @@ class _TabsPageState extends State<TabsPage> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
-
-    return Scaffold(
+    return new Scaffold(
+      appBar: AppBar(
+        iconTheme: new IconThemeData(color: Theme.of(context).primaryColor),
+      ),
+      drawer: DrawerPage(),
+      drawerEdgeDragWidth: 40,
       body: SizedBox.expand(
         child: PageView(
           controller: _pageController,
@@ -42,15 +48,15 @@ class _TabsPageState extends State<TabsPage> {
           },
           children: <Widget>[
             HomePage(),
-            HomePage(),
-            HomePage(),
-            ProfilePage(),
+            SearchPage(),
+            StatisticPage(),
+            NotificationPage(),
           ],
         ),
       ),
-      backgroundColor: AppTheme.secondColor,
+      backgroundColor: Theme.of(context).backgroundColor,
       bottomNavigationBar: BottomNavyBar(
-        backgroundColor: AppTheme.secondColor,
+        backgroundColor: Theme.of(context).backgroundColor,
         selectedIndex: currentIndex,
         showElevation: true,
         itemCornerRadius: 8,
@@ -67,10 +73,10 @@ class _TabsPageState extends State<TabsPage> {
             ),
             title: Text(
               'Inicio',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              style: Theme.of(context).textTheme.body1,
             ),
-            activeColor: Colors.blue,
-            inactiveColor: Colors.grey,
+            activeColor: Theme.of(context).primaryColor,
+            inactiveColor: Theme.of(context).accentColor,
             textAlign: TextAlign.center,
           ),
           BottomNavyBarItem(
@@ -80,10 +86,10 @@ class _TabsPageState extends State<TabsPage> {
             ),
             title: Text(
               'Busca',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              style: Theme.of(context).textTheme.body1,
             ),
-            activeColor: Colors.blue,
-            inactiveColor: Colors.grey,
+            activeColor: Theme.of(context).primaryColor,
+            inactiveColor: Theme.of(context).accentColor,
             textAlign: TextAlign.center,
           ),
           BottomNavyBarItem(
@@ -92,21 +98,24 @@ class _TabsPageState extends State<TabsPage> {
               size: 25,
             ),
             title: Text(
-              'Gráficos',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              'Estatísticas',
+              style: Theme.of(context).textTheme.body1,
             ),
-            activeColor: Colors.blue,
-            inactiveColor: Colors.grey,
+            activeColor: Theme.of(context).primaryColor,
+            inactiveColor: Theme.of(context).accentColor,
             textAlign: TextAlign.center,
           ),
           BottomNavyBarItem(
-            icon: Icon(EvaIcons.person, size: 25,),
-            title: Text(
-              'Perfil',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            icon: Icon(
+              EvaIcons.bell,
+              size: 25,
             ),
-            activeColor: Colors.blue,
-            inactiveColor: Colors.grey,
+            title: Text(
+              'Notificações',
+              style: Theme.of(context).textTheme.body1,
+            ),
+            activeColor: Theme.of(context).primaryColor,
+            inactiveColor: Theme.of(context).accentColor,
             textAlign: TextAlign.center,
           ),
         ],

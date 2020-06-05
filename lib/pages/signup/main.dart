@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:masflu/controllers/signup.dart';
 import 'package:masflu/stores/user.dart';
 import 'package:masflu/pages/home/main.dart';
-import 'package:masflu/widgets/form_password.dart';
+import 'package:masflu/widgets/formPassword.dart';
 import 'package:provider/provider.dart';
 
 class SignupPage extends StatefulWidget {

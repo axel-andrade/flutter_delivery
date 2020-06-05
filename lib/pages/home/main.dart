@@ -1,7 +1,7 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:masflu/app_theme.dart';
+import 'package:masflu/pages/drawer/main.dart';
 import 'package:masflu/stores/user.dart';
 import 'package:masflu/utils.dart';
 import 'package:masflu/widgets/avatar.dart';
@@ -28,7 +28,7 @@ class GridViewItem extends StatelessWidget {
     return GestureDetector(
       onTap: () => callback(),
       child: Padding(
-        padding: EdgeInsets.all(10),
+        padding: EdgeInsets.all(20),
         child: Container(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -37,35 +37,27 @@ class GridViewItem extends StatelessWidget {
               Icon(
                 icon,
                 size: 30,
-                color: Colors.white,
+                color: Theme.of(context).accentColor,
               ),
               SizedBox(
                 height: 10,
               ),
               Text(
                 text,
-                style: TextStyle(
-                    fontSize: 24.0,
-                    color: Colors.blue,
-                    fontWeight: FontWeight.bold),
-              ),
+                style: Theme.of(context).textTheme.display1,),
               SizedBox(
                 height: 10,
               ),
               Text(
                 number,
-                style: TextStyle(
-                    fontSize: 24.0,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold),
-              ),
+                style: Theme.of(context).textTheme.display2),
             ],
           ),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: AppTheme.primaryColor,
+            color: Theme.of(context).canvasColor,
             boxShadow: [
-              BoxShadow(color: Colors.lightBlue[50], spreadRadius: 3),
+              BoxShadow(color: Theme.of(context).primaryColor, spreadRadius: 3),
             ],
           ),
         ),
@@ -75,18 +67,11 @@ class GridViewItem extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget {
+  static const String routeName = '/homes';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: true,
-        leading: IconButton(
-          icon: Icon(Icons.code),
-          color: Colors.blue,
-          onPressed: () => Navigator.pop(context, false),
-        ),
-      ),
-      backgroundColor: AppTheme.secondColor,
+      backgroundColor: Theme.of(context).backgroundColor,
       body: SafeArea(
         child: GridView.count(
           crossAxisCount: 2,
@@ -125,6 +110,13 @@ class HomePage extends StatelessWidget {
               icon: EvaIcons.clipboardOutline,
               text: 'Ordens',
               number: '17',
+            ),
+            GridViewItem(
+              callback: () {},
+              color: HexColor('#87CEFA'),
+              icon: Icons.account_balance,
+              text: 'Financeiro',
+              number: '',
             ),
           ],
         ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:masflu/app_theme.dart';
 import 'package:masflu/pages/login/main.dart';
 import 'package:masflu/widgets/customLoading.dart';
 
@@ -13,7 +12,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppTheme.secondColor,
+      color: Theme.of(context).backgroundColor,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -28,7 +27,7 @@ class _SplashPageState extends State<SplashPage> {
           ),
           CustomLoading(
             busy: true,
-            color: Colors.white
+            color: Theme.of(context).primaryColor
           )
         ],
       ),

@@ -1,6 +1,5 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:masflu/app_theme.dart';
 import 'package:masflu/main.dart';
 import 'package:masflu/stores/user.dart';
 import 'package:masflu/widgets/customButton.dart';
@@ -21,13 +20,13 @@ class _RecoverPasswordPageState extends State<RecoverPasswordPage> {
         automaticallyImplyLeading: true,
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios),
-          color: Colors.blue,
+          color: Theme.of(context).primaryColor,
           onPressed: () => Navigator.pop(context, false),
         ),
       ),
       body: Container(
         padding: EdgeInsets.only(top: 60, left: 40, right: 40),
-        color: AppTheme.secondColor,
+        color: Theme.of(context).backgroundColor,
         child: ListView(
           children: <Widget>[
             Column(
@@ -49,7 +48,7 @@ class _RecoverPasswordPageState extends State<RecoverPasswordPage> {
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.normal,
-                          color: Colors.blue,
+                          color: Theme.of(context).primaryColor,
                         ),
                       ),
                       SizedBox(
@@ -60,7 +59,7 @@ class _RecoverPasswordPageState extends State<RecoverPasswordPage> {
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w400,
-                          color: Colors.white
+                          color: Theme.of(context).accentColor
                         ),
                         textAlign: TextAlign.center,
                       )
@@ -82,22 +81,18 @@ class _RecoverPasswordPageState extends State<RecoverPasswordPage> {
                         obscureText: false,
                         decoration: InputDecoration(
                           filled: true,
-                          fillColor: AppTheme.primaryColor,
+                          fillColor: Theme.of(context).canvasColor,
                           labelText: "E-mail",
-                          labelStyle: TextStyle(
-                              fontWeight: FontWeight.normal,
-                              fontSize: 20,
-                              letterSpacing: 0.27,
-                              color: Colors.white),
+                          labelStyle: Theme.of(context).textTheme.subtitle,
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.all(Radius.circular(10)),
-                            borderSide: BorderSide(color: Colors.white),
+                            borderSide: BorderSide(color: Theme.of(context).accentColor),
                           ),
                           border: OutlineInputBorder(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10))),
                         ),
-                        style: TextStyle(fontSize: 20, color: Colors.white),
+                        style: TextStyle(fontSize: 20, color: Theme.of(context).accentColor),
                         validator: (value) {
                           if (value.isEmpty) {
                             return 'Email Inválido';

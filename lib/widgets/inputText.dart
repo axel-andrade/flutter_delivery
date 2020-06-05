@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:masflu/app_theme.dart';
 
 class InputText extends StatelessWidget {
   final String labelText;
@@ -23,7 +22,7 @@ class InputText extends StatelessWidget {
         decoration: InputDecoration(
           labelText: labelText,
           labelStyle: TextStyle(
-            color: Colors.blue,
+            color: Theme.of(context).primaryColor,
             fontWeight: FontWeight.w400,
             fontSize: 20,
           ),
@@ -31,7 +30,7 @@ class InputText extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(10)),
           ),
         ),
-        style: TextStyle(fontSize: 20, color: Colors.blue),
+        style: TextStyle(fontSize: 20, color: Theme.of(context).primaryColor),
         validator: (val) => validator(val),
         onSaved: onSaved,
         

@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:masflu/app_theme.dart';
-import 'package:masflu/models/profileListItem.dart';
-import 'package:masflu/widgets/profileItem.dart';
+import 'package:masflu/models/drawerItemList.dart';
+import 'package:masflu/widgets/drawerItem.dart';
 
-class ProfileListItem extends StatefulWidget {
+class DrawerItemList extends StatefulWidget {
   @override
-  _ProfileListItemState createState() => _ProfileListItemState();
+  _DrawerItemListState createState() => _DrawerItemListState();
 }
 
-class _ProfileListItemState extends State<ProfileListItem> {
-  final List<ProfileItem> items = new ProfileListItemModel().getItems();
+class _DrawerItemListState extends State<DrawerItemList> {
+  final List<DrawerItem> items = new DrawerItemListModel().getItems();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppTheme.secondColor,
+      backgroundColor: Theme.of(context).backgroundColor,
       body: ListView.separated(
         padding: const EdgeInsets.only(top: 4, left: 15, right: 15, bottom: 4),
         itemCount: items.length,
