@@ -35,7 +35,7 @@ class App extends StatelessWidget {
         title: 'Base app',
         debugShowCheckedModeBanner: false,
         theme: darkTheme(),
-        home: SplashPage(),
+        home: TabsPage(),
       ),
     );
   }
