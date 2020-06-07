@@ -1,6 +1,6 @@
 class HomeRepository {
   Future<void> getItems() async {
-    print("atualizou repositorio");
+    print("entrou no repositorio");
     await Future.delayed(Duration(seconds: 2));
   }
 }

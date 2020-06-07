@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class GridViewItem extends StatelessWidget {
+class HomeItem extends StatelessWidget {
   final Function callback;
   final Color color;
   final IconData icon;
   final String text;
   final String number;
 
-  GridViewItem({
+  HomeItem({
     @required this.callback,
     @required this.color,
     @required this.icon,
@@ -36,13 +36,12 @@ class GridViewItem extends StatelessWidget {
               ),
               Text(
                 text,
-                style: Theme.of(context).textTheme.display1,),
+                style: Theme.of(context).textTheme.display1,
+              ),
               SizedBox(
                 height: 10,
               ),
-              Text(
-                number,
-                style: Theme.of(context).textTheme.display2),
+              Text(number, style: Theme.of(context).textTheme.display2),
             ],
           ),
           decoration: BoxDecoration(

@@ -56,7 +56,7 @@ class DrawerPage extends StatelessWidget {
             ),
             Container(
               height: 1.0,
-              color: Colors.grey,
+              color: Colors.grey.withOpacity(0.2),
             ),
             SizedBox(
               height: 10,
@@ -84,7 +84,7 @@ class DrawerPage extends StatelessWidget {
             ),
             Container(
               height: 1.0,
-              color: Colors.grey,
+              color: Colors.grey.withOpacity(0.2),
             ),
             SizedBox(
               height: 10,
