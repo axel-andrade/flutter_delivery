@@ -11,8 +11,8 @@ class HomeItemPlaceholder extends StatelessWidget {
       ),
       itemCount: 6,
       itemBuilder: (context, index) => Shimmer.fromColors(
-        baseColor: Colors.grey[400],
-        highlightColor: Colors.white,
+        baseColor: Theme.of(context).cardColor,
+        highlightColor: Theme.of(context).cardColor.withOpacity(0.5),
         child: HomeItem(
           callback: () {},
           color: Colors.blue,

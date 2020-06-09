@@ -1,5 +1,6 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:masflu/pages/client/main.dart';
 import 'package:masflu/pages/home/main.dart';
 import 'package:masflu/pages/login/main.dart';
 import 'package:masflu/utils.dart';
@@ -25,7 +26,14 @@ class DrawerPage extends StatelessWidget {
               title: 'Clientes',
               subtitle: 'Meus clientes',
               icon: EvaIcons.peopleOutline,
-              callback: () {},
+              callback: () {
+                Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ClientListPage(),
+                      ),
+                    );
+              },
             ),
             DrawerItem(
               title: 'Produtos',
@@ -49,6 +57,12 @@ class DrawerPage extends StatelessWidget {
               title: 'Ordens de Serviço',
               subtitle: 'Minhas ordens de serviço',
               icon: EvaIcons.clipboardOutline,
+              callback: () {},
+            ),
+            DrawerItem(
+              title: 'Financeiro',
+              subtitle: 'Meus dados financeiros',
+              icon: Icons.account_balance,
               callback: () {},
             ),
             SizedBox(

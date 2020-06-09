@@ -53,6 +53,7 @@ ThemeData lightTheme() {
     primaryColor: primaryColor,
     accentColor: secondaryColor,
     canvasColor: Colors.white,
+    cardColor: Colors.grey,
     backgroundColor: backgroundColor,
     appBarTheme: AppBarTheme(
       color: backgroundColor2,

@@ -11,4 +11,5 @@ class LoginController {
   Future<UserModel> logIn(String email, String password) async {
     return repository.logIn(email, password);
   }
+  
 }
